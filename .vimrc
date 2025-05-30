@@ -33,6 +33,12 @@ Plug 'tpope/vim-commentary'
 "复制剪贴板工具
 Plug 'Jorenar/fauxClip'
 
+"vim-test测试插件
+Plug 'vim-test/vim-test'
+
+"vim-dispatch异步跑终端的
+Plug 'tpope/vim-dispatch'
+
 call plug#end()
 
 " 设置配色方案
@@ -43,6 +49,17 @@ set number
 
 " 插入模式下输入 jj 替代 <Esc>，快速返回普通模式
 inoremap jj <Esc>
+
+"NERDTree 快捷键
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+"vim-test快捷键和配置  
+let test#strategy = "dispatch"
+nmap <leader>tn :TestNearest<CR>
+nmap <leader>tf :TestFile<CR>
+nmap <leader>ts :TestSuite<CR>
+nmap <leader>tl :TestLast<CR>
+nmap <leader>tv :TestVisit<CR>
 
 "coc setting
 
